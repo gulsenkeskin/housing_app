@@ -1,2 +1,4 @@
 <label for="location-search">Yeni bir yer arayın </label>
-<input id="location-search" placeholder="Örn: İstanbul"><button>Ara</button>
+
+<!-- inputa id değeri vererek bu id değerine sahip inputun değerine erişmek için idName.value kullan => search.value inputun değerini verir -->
+<input id="location-search" #search placeholder="Örn: İstanbul"><button (click)="searchHousingLocations(search.value)">Ara</button>

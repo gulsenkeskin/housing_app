@@ -1,0 +1,12 @@
+
+  <!-- seçilen konumun özelliklerini göstermek için -->
+  <article>
+    <ng-container *ngIf="selectedLocation"> 
+    <img [src]="selectedLocation.photo">
+    <p>{{selectedLocation.name}}</p>
+    <p>{{selectedLocation.availableUnits}}</p>
+    <p>{{selectedLocation.city}} , {{selectedLocation.state}}</p>
+    <p>{{selectedLocation.laundry ? "Çamaşırhane var": "Çamaşırhane yok"}}</p>
+    <p>{{selectedLocation.wifi ? "Wifi var" : "Wifi yok"}}</p>
+  </ng-container>
+  </article>

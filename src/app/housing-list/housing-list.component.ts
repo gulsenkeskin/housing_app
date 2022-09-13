@@ -11,12 +11,23 @@ export class HousingListComponent implements OnInit {
 
   @Input() locationList: HousingLocation[] = [];
 
+  //results kullanıcının arama sonucuyla eşlen konut dizisini temsil eder
+  results: HousingLocation[] = [];
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
   searchHousingLocations(searchText: string) {
-    console.log(searchText);
+    if (!searchText) return;
+
+    this.results = this.locationList.filter(
+      (location: HousingLocation) => location.city
+        .toLowerCase()
+        .includes(
+          searchText.toLowerCase()
+        ));
   }
 
 }

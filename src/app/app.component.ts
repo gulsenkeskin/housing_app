@@ -57,7 +57,7 @@ export class AppComponent {
     },
     {
       name: "İstanbul Konutları",
-      city: "İstanbul",
+      city: "Istanbul",
       state: "IL",
       photo: "../assets/housing-6.jpg",
       availableUnits: 6,

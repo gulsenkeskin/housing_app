@@ -3,6 +3,6 @@
 <!-- inputa id değeri vererek bu id değerine sahip inputun değerine erişmek için idName.value kullan => search.value inputun değerini verir -->
 <input id="location-search" #search placeholder="Örn: İstanbul"><button (click)="searchHousingLocations(search.value)">Ara</button>
 
-<article *ngFor="let location of locationList">
+<article *ngFor="let location of results">
     <p>{{location.name}}</p>
 </article>

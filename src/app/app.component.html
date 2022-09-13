@@ -3,6 +3,9 @@
     <img src="../assets/logo.svg" alt="housingapp"> Housing Searcher
   </header>
   <section>
-    <app-housing-list></app-housing-list>
+    <!-- app-component.ts deki housingLocationList listesini app-housing-list deki input dekarotörüne gönderir -->
+    <app-housing-list [locationList]="housingLocationList"></app-housing-list>
   </section>
+
+
 </main>

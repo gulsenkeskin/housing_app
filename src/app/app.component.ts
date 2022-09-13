@@ -14,10 +14,13 @@ export class AppComponent {
 
   constructor(private housingLocationService: HousingLocationService) { }
 
-
   getHousingLocations(): void {
-    this.housingLocationList = this.housingLocationService.getHousingLocations();
+    this.housingLocationService.getHousingLocations().subscribe(housingLocations => this.housingLocationList = housingLocations);
   }
+
+  // getHousingLocations(): void {
+  //   this.housingLocationList = this.housingLocationService.getHousingLocations();
+  // }
 
   ngOnInit(): void {
     this.getHousingLocations();

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { HousingLocation } from '../housing-location';
 
 @Component({
@@ -10,6 +10,15 @@ export class HousingListComponent implements OnInit {
   //? Input dekoratörü, bir componentin bir template'ten değer almasına izin verir. 
 
   @Input() locationList: HousingLocation[] = [];
+
+  @Output() locationSelectedEvent = new EventEmitter<HousingLocation>();
+  //?Bir kullanıcı listeden bir konumu tıkladığında locationSelectedEvent'i tetiklememiz gerekir.
+
+  selectHousingLocation(location: HousingLocation) {
+    this.locationSelectedEvent.emit(location);
+  }
+
+
 
   //results kullanıcının arama sonucuyla eşlen konut dizisini temsil eder
   results: HousingLocation[] = [];
@@ -31,3 +40,10 @@ export class HousingListComponent implements OnInit {
   }
 
 }
+
+
+
+//?Angular'da, @Input() ebeveynden çocuğa veri gönderirken 
+//? @Output(), componentlerin alt componentden üst componente veri içeren bir olay göndermesine izin verir.
+
+//? Output dekoratörü, dinleyicileri herhangi bir olay hakkında bilgilendirmek için bir EventEmitter kullanır.

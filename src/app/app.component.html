@@ -3,9 +3,21 @@
     <img src="../assets/logo.svg" alt="housingapp"> Housing Searcher
   </header>
   <section>
-    <!-- app-component.ts deki housingLocationList listesini app-housing-list deki input dekarotörüne gönderir -->
-    <app-housing-list [locationList]="housingLocationList"></app-housing-list>
-  </section>
+    <!--[locationList] app-component.ts deki housingLocationList listesini app-housing-list deki input dekarotörüne gönderir -->
+    <app-housing-list [locationList]="housingLocationList" (locationSelectedEvent)="updateSelectedLocation($event)"></app-housing-list>
+    <!-- app.component.html'de, locationSelectedEvent'i dinlemek ve olayı updateSelectedLocation yöntemiyle işlemek için (locationSelectedEvent) kullanıldı -->
 
+  </section>
+  
+  <!-- seçilen konumun özelliklerini göstermek için -->
+  <article>
+    <img [src]="selectedLocation?.photo">
+    <p>{{selectedLocation?.name}}</p>
+    <p>{{selectedLocation?.availableUnits}}</p>
+    <p>{{selectedLocation?.city}} , {{selectedLocation?.state}}</p>
+    <p>{{selectedLocation?.laundry ? "Çamaşırhane var": "Çamaşırhane yok"}}</p>
+    <p>{{selectedLocation?.wifi ? "Wifi var" : "Wifi yok"}}</p>
+
+  </article>
 
 </main>

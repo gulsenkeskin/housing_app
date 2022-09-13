@@ -84,7 +84,16 @@ export class AppComponent {
     },
   ];
 
+  // union type: değişkenlerin birden çok tipten birini kabul etmesine izin verir
+  selectedLocation: HousingLocation | undefined;
 
+  updateSelectedLocation(location: HousingLocation) {
+    this.selectedLocation = location;
 
+  }
+
+  searchHousingLocations() {
+
+  }
 
 }

@@ -49,3 +49,7 @@ article > p:nth-of-type(2) {
   font-size: 30pt;
   margin-bottom: 15px;
 }
+img {
+  border-radius: 5px;
+  width: 100%;
+}

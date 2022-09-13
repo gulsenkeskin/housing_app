@@ -4,7 +4,8 @@
 <input id="location-search" #search placeholder="Örn: İstanbul"><button (click)="searchHousingLocations(search.value)">Ara</button>
 
 <article *ngFor="let location of results">
+    <img [src]="location.photo" [alt]="location.name">
     <p>{{location.name}}</p>
-    <!-- Bu olay, TypeScript sınıfındaki selectHousingLocation yöntemini çağırır ve argüman olarak tıklanan konuma bir başvuru iletir. -->
+    <p>{{location.city}}, {{location.state}}</p>    <!-- Bu olay, TypeScript sınıfındaki selectHousingLocation yöntemini çağırır ve argüman olarak tıklanan konuma bir başvuru iletir. -->
     <button (click)="selectHousingLocation(location)">View</button>
 </article>

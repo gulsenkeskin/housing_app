@@ -3,8 +3,9 @@ header {
   font-weight: bold;
   font-size: 24pt;
   border-bottom: solid 0.5px rgb(223, 223, 223);
-  color: #050e2e;
+  color: darkseagreen;
 }
+
 header {
   padding-left: 50px;
 }
@@ -29,7 +30,7 @@ article {
 
 article,
 p {
-  color: #202845;
+  color: palevioletred;
 }
 img {
   border-radius: 5px;

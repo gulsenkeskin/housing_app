@@ -18,9 +18,9 @@ input {
 button {
   width: 70px;
   height: 42px;
-  background-color: palevioletred;
-  color: white;
-  border: solid 1px palevioletred;
+  background-color: paleturquoise;
+  color: black;
+  border: solid 1px #888c9c;
   border-radius: 0 2px 2px 0;
 }
 

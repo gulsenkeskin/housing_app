@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HousingLocation } from './housing-location';
-import { LOCATIONS } from './mock-locations';
+import { HousingLocationService } from './housing-location.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +10,19 @@ import { LOCATIONS } from './mock-locations';
 export class AppComponent {
   title = 'housing_app';
 
-  housingLocationList: HousingLocation[] = LOCATIONS;
+  housingLocationList: HousingLocation[] = [];
+
+  constructor(private housingLocationService: HousingLocationService) { }
+
+
+  getHousingLocations(): void {
+    this.housingLocationList = this.housingLocationService.getHousingLocations();
+  }
+
+  ngOnInit(): void {
+    this.getHousingLocations();
+  }
+
 
   // union type: değişkenlerin birden çok tipten birini kabul etmesine izin verir
   selectedLocation: HousingLocation | undefined;
@@ -23,5 +35,7 @@ export class AppComponent {
   searchHousingLocations() {
 
   }
+
+
 
 }
